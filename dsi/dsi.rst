@@ -305,6 +305,13 @@ Herramientas para modelar la interfaz con el usuario
 Unidad 3: Diseño estructurado
 =============================
 
+.. figure:: img/dsi6.png
+   :scale: 50%
+
+   Figure 6: Diagrama de modelos
+
+
+
 Modelos
 -------
 
@@ -343,7 +350,11 @@ Pasos del modelo de programas:
 Tiende a alcanzar una estructura de este tipo:
 
 
-IMAGEN
+.. figure:: img/dsi7.png
+   :scale: 50%
+
+   Figure 7: Factorización
+
 
 
 Sistema
@@ -372,3 +383,93 @@ No se los puede analizar aislados.
 *	Eferentes: son módulos'que sacan datos del sistema.
 *	Transformadores: transforman datos.
 *	Coordinadores: no realizan transformación, sólo coordinan la invocación de otros.
+
+
+.. figure:: img/dsi8.png
+   :scale: 50%
+
+   Figure 8: Tipos de módulos
+
+
+
+
+Análisis de transformación
+--------------------------
+
+Es un conjunto de pasos de diseño que permite convertir un DFD, con características de transformación, en una plantilla predefinida para la estructura del programa.
+
+1.	Refinación de DFD. La información obtenida de los modelos de análisis contenidos en la especificación de requisitos del software se refina para obtener mayor detalle.
+2.	Identificación de rama aferente. rama eferente y el centro de transformación. Los límites del flujo de entrada y salida son interpretados.
+3.	Factorización en una estructura del 1° nivel. Provoca una estructura de programa en la que los módulos del nivel superior realizan la toma de decisiones y los módulos del nivel inferior realizan la mayoría del trabajo de entrada, cálculos y salida.
+4.	Factorización de cada rama de la estructura.
+5.	Refinamiento aplicado heurística de diseño.
+
+En la rama eferente si puede haber entrada, y en la aferente salida. Se trata que todos los módulos que capturan datos estén en el último nivel de la estructura. Los coordinadores no van en el DFD (pueden ir), sino que los introduce el diseñador por prolijidad.
+
+Análisis de transacción. Transacción es cualquier evento, elemento de datos, control, señal o cambio de estado que causa, dispara o inicia alguna acción o secuencia de acciones.
+
+Ejemplo de transacción: un usuario aprieta un botón en un cajero automático, un dato que entra a un sistema, la pulsación de ESC en una terminal, una interrupción de hardware.
+
+**Pasos de una transacción:**
+
+1.	Refinación de DFD.
+2.	Indentificación del centro de transacción. La posición del centro de transacción se puede obtener inmediatamente del DFD. El centro de transacción está en el origen de varios caminos de acción que fluyen desde él.
+3.	Identificación de las acciones que pueden ser disparadas.
+4.	Asociación de la estructura de transacción del 1° nivel.
+5.	Factorización de cada rama de acuerdo a las acciones detectadas.
+6.	Refinación aplicando heurísticas de diseño.
+
+La estructura asociada a un análisis de transacción es:
+
+.. figure:: img/dsi9.png
+   :scale: 50%
+
+   Figure 9: Niveles de jerarquía
+
+
+
+Nivel P es donde está el despachador de la transacción.
+Nivel T es donde están los coordinadores de las transacciones.
+Nivel A es donde están las acciones.
+Nivel D es donde está el detalle.
+
+
+**Carta de estructura:**
+
+Herramientas gráfica que modela la relación jerárquica que existe entre los módulos de un programa y sus interfaces. Es una herramienta de diseño arquitectónico.
+
+**Notación:**
+
++--------------------------+-----------------------------------------------------------------------------+
+| Gráfic                   | Desocripción                                                                |
++==========================+=============================================================================+
+| .. image:: img/dsi10.png | Módulo. Lleva el nombre de la función del modulo                            |
++--------------------------+-----------------------------------------------------------------------------+
+| .. image:: img/dsi11.png | Representa módulos que ya existen, de bibliotecas                           |
++--------------------------+-----------------------------------------------------------------------------+
+| .. image:: img/dsi12.png | Invocación entre dos módulos. El control siempre vuelve al módulo invocador |
++--------------------------+-----------------------------------------------------------------------------+
+| .. image:: img/dsi13.png | Pasaje de datos - Pasaje de control } interfaces                            |
++--------------------------+-----------------------------------------------------------------------------+
+
+
+La carta sirve para ver la cohesión y el acomplamiento, además de la jerárquica
+
+**Heurísticas de diseño:**
+
+Las propuestas por yourdon son cuatro:
+
+1.	Tamaño del módulo. En esta época perdió sentido el tamaño del módulo como heurística. Hay que mantener coherencia en los tamaños de los mismos, equilibrar entre módulos grandes y chicos, a lo largo de todo el diseño. Lo común es hacer módulos que entren en una pantalla.
+2.	Fomentar los abanicos de entrada (Fan in) en los niveles bajos de la estructura.
+3.	Fomentar los abanicos de salida (Fan out) en los niveles altos de la estructura.
+4.	Mantener el ámbito del efecto de un módulo dentro de su ámbito de control. Ámbito de control es el conjunto de módulos subordinados directa o indirectamente de él. Ámbito de efecto de un módulo es el conjunto de módulos que se ven afectados por un cambio de decisión realizada en él.
+
+Pressman propone además:
+
+1.	Revisar la estructura para aumentar la cohesión y disminuir el acomplamiento.
+2.	Evitar las conexiones patológicas a todo nivel (de datos, de control, de documentación). Las conexiones patológicas se refieren a bifurcaciones o referencias en el medio de un módulo.
+3.	Revisar los módulos para garantizar la portabilidad.
+
+*Conexiones patológicas:* Son referencias por parte de un módulo a un identificador definido en otro módulo. Tal referencia puede incluir datos de control. El uso de conexiones patológicas es el uso de variables globales. Un sistema con conexiones patológicas es difícil de modificar y mantener.
+
+
