@@ -473,3 +473,192 @@ Pressman propone además:
 *Conexiones patológicas:* Son referencias por parte de un módulo a un identificador definido en otro módulo. Tal referencia puede incluir datos de control. El uso de conexiones patológicas es el uso de variables globales. Un sistema con conexiones patológicas es difícil de modificar y mantener.
 
 
+
+Unidad 4: Diseño orientado a objetos
+====================================
+
+Se definen todas las clases, relaciones y comportamientos asociados con ellas que son relevantes al problema que se va a resolver. Para cumplirlo se deben ejecutar las siguientes tareas.
+
+1.	Los requisitos básicos del usuario deben comunicarse entre el cliente y el ingeniero de software.
+2.	Identificar las clases (definir atributos y métodos).
+3.	Se debe especificar una jerarquía de clases.
+4.	Representar las relaciones objeto a objeto.
+5.	Modelar el comportamiento del objeto.
+6.	Repetir iterativamente las tareas de la 1 a la 5 hasta completar el modelo.
+
+
+Proceso Unificado
+-----------------
+
+**Proceso unificado de desarrollo de software:** es un proceso de desarrollo de software (conjuno de actividades necesarias para transformar los requisitos de un usuario en sistema software) que se basa en componentes, es decir, el sistema software está formado por componentes software interconectados a través de interfaces bien definidas.
+
+
+**Dirigido por casos de uso:** un caso de uso es un fragmento de funcionalidad del sistema que proporciona al usuario un resultado importante. Todos los casos de uso juntos constituyen el modelo de casos de uso, el cual describe la funcionalidad total del sistema.
+
+Dirigido por casos de uso, quiere decir, que el proceso de desarrollo sigue un hila que avanza a través de una serie de flujos de trabajo que parten de los casos de uso. El objetivo es encontrar los verdaderos requisitos y representarlos de modo adecuado para los usuarios, clientes y desarrolladores.
+
+Los casos de usos proporcionan un medio sistemático e intuitivo de la captura de requisitos funcionales y dirige todo el proceso de desarrollo.
+
+*	Captura de requisitos que aportan valor añadido: tomando la perspectiva del tipo de usuario, captura los casos de uso que necesita para hacer su trabajo, para ello se debe responder a la pregunta ¿qué quiere que haga el sistema para cada usuario?, esta pregunta nos mantiene centrado en como el sistema dará soporte a cada usuario.
+*	Dirigir el proceso: el proceso progresa a través de una serie de flujos de trabajo que inician con los casos de uso. Estos ayudan a encontrar las clases, desarrollar interfaces de usuario, no sólo inician el proceso, sino que también lo enlazan. Ayudan a los jefes del proyecto a planificar, dan soporte a la trazabilidad a través de los modelos, esto hace más fácil mantener la integridad del sistema y conservar actualizado al sistema en su conjunto cuando tenemos requisitos cambiantes.
+*	Idear la arquitectura: ayudan a llevar a cabo el proceso iterativo, obteniendo incrementos. Ayudan a idear la arquitectura mediante la selección de casos de uso significativos arquitectónicamente. También ayudan a la redacción del manual de usuario ya que un caso de uso es una manera de usar el sistema.
+
+**Centrado en la arquitectura:** la arquitectura en un sistema software se describe mediante diferentes vistas del sistema en construcción. El concepto de arquitectura software incluye los aspectos estáticos y dinámicos más significativos del sistema. El arquitecto modelo el sistema para darle forma, para ello deben trabajar en los casos de usos claves. Podemos decir que el arquitecto:
+
+*	Trabaja con un subconjunto de casos de uso específicos, aquellos que representan la funcionalidad del sistema, cada caso de uso se especifica en detalle y se realizan en termino de subsistemas, clases y componentes.
+*	A medida que un caso de uso se especifica y maduran, se descubre más de la arquitectura. Esto a la vez lleva a la madurez de más casos de uso.
+
+Este proceso continua hasta que se considere que la arquitectura es estable.
+
+
+**Iterativo e incremental:** las iteraciones hacen referencia a pasos en el flujo de trabajo y los incrementos al crecimiento del producto. Los beneficios de un sistema iterativo controlado son:
+
+*	Reduce el costo de los riegos a los constos de un sólo incremento.
+*	Reduce el riesgo de no sacar al mercado el producto en el calendario previsto.
+*	Acelera el ritmo del esfuerzo en su totalidad, debido a que solo los desarrolladores trabajan de manera más eficiente para obtener resultados claros a corto plazo en lugar de tener calendarios largos que se prolongan eternamente.
+*	Las necesidades del usuario no pueden definirse completamente al principio.
+
+
+**La vida del proceso unificado:** cada ciclo produce una versión nueva del sistema y cada versión es un producto preparado para su entrega. Para llevar a cabo el siguiente ciclo de manera más eficiente, los desarrolladores necesitan todas las presentaciones del software.
+
+*	Modelo de casos de uso: con todos los casos de uso y sus relaciones con los usuarios.
+*	Modelo de análisis: refina los casos de uso y establece la asignación de la funcionalidad del sistema, a un conjunto de objetos que proporcionan el comportamiento.
+*	Modelo de diseño: define la estructura estática del sistema en forma de subsistemas, clases e interfaces y los casos de uso reflejados como colaboraciones entre los subsistemas, clases e interfaces.
+*	Modelo de implementación: incluye los componentes y las correspondencia de las clases con los componentes.
+*	Modelo de pruebas: describe los casos de prueba que verifican los casos de uso.
+
+El sistema también debe tener un modelo de dominio o de negocio.
+
+*	Modelo de dominio: captura los tipos más importantes de objetos en el contexto del sistema. Los objetos del dominio representan las cosas que existen o los eventos que suceden en el entorno en el que trabaja el sistema. Las clases del dominio aparecen en tres formas típicas: objetos del negocio, objetos del mundo real y conceptos que el sistema debe hacer un seguimiento y sucesos que ocurren o han ocurrido. Se describe especialmente mediante un diagrama de clases y en su desarrollo se debe incluir tanto expertos en el dominio como en el modelado. El modelo de dominio y el glosario ayudan a utilizar un vocabulario común y se utilizan en el desarrollo del modelo de casos de uso y el modelo de análisis.
+*	Modelo de negocio: es una técnica para comprender los procesos de negocio de la organización. El objetivo es identificar los casos de uso del software y las entidades de negocio relevantes que el software debe soportar. Se ve soportado por dos tipos de modelo, modelo de casos de uso y modelo de objetos (modelo interno de un negocio que describe como se lleva a cabo un caso de uso de negocio por parte de un conjunto de usuarios).
+
+
+**Fases dentro del ciclo de vida:** el ciclo de vida se divide en cuatro fases, cada fase termina con un hito, que permite a los directores del proyecto tomar decisiones cruciales y controlar el progreso del trabajo
+
+
+*	**Fase de inicio (establece la viabilidad):** se lleva a cabo mediante
+
+    -	Identificación y reducción de los riesgos críticos para la viabilidad del sistema.
+    -	Creación de una arquitectura candidata a partir  del desarrollo de un subconjunto clave de los requerimientos, pasado por el modelo de casos de uso.
+    -	Realización de una estimación inicial de costo, calendario y calidad del producto.
+    -	El inicio del análisis de negocio, por el cual el proyecto parece que merece la pena económicamente.
+     
+*	**Fase de elaboración (se centra en la factibilidad):** se lleva a cabo mediante.
+
+    -	La identificación y reducción de los riesgos que afectan de manera significativa a la construcción del sistema.
+    -	La especificación de la mayoría de los casos de uso que representan la funcionalidad que han de desarrollarse.
+    -	La extensión de la arquitectura candidata hasta la proporción de una línea base.
+    -	La preparación del plan de proyecto con suficiente detalle como para guiar la fase de construcción.
+    -	La realización de una estimación con límites suficientemente ajustados como para justificar su inversión.
+    -	La terminación del análisis de negocio - el proyecto vale la pena.
+
+*	**Fase de construcción (construye el sistema):** su objetivo es crear un producto listo para ser distribuido como versión beta y ser sometido a prueba, ocupa más personal. Se lleva a cabo.
+
+    -	La extensión de la identificación, descripción y realización de los casos de uso a todos los casos de uso.
+    -	La finalización del análisis, diseño. Implementación y prueba.
+    -	El mantenimiento de la integridad de la arquitectura, modificándola cuando sea necesario.
+    -	La monitorización de los riesgos críticos y significativos arrastrados desde las dos primeras fases y su mitigación si se materializan.
+    
+*	**Fase de transición (se mete en el entorno de usuario):** se lleva a cabo mediante.
+
+    -	Preparar el lugar donde se implantará el sistema.
+    -	Aconsejar al cliente sobre la actualización del entorno, en los que se supone que el software va a funcionar.
+    -	Preparar los manuales y otros documentos para la entrega del producto. En la fase de construcción se prepara una documentación preliminar para los usuarios de la versión beta.
+    -	Ajustar el software para que funcione con los parámetros actuales del entorno del usuario.
+    -	Corregir los defectos encontrados a lo largo de las pruebas realizadas a la versión beta.
+    -	Modificar el software al detectar problemas que no habían sido previstos.
+
+
+
+
+Unidad 6: Prueba de software
+============================
+
+**Prueba:** es la actividad de ejecutar un programa con el fin de encontrar errores.
+
+La prueba involucra ejercitar el sistema para asegurar que produzca las salidas apropiadas y exhiba el comportamiento adecuado para una gama amplia de entradas.
+
+El analista trabaja de manera cercana con el usuario para desarrollar un conjunto eficaz y de gran alcance de casos de prueba basados en el modelo esencial y el modelo de implementación del usuario. Este proceso de desarrollar casos de prueba de aceptación puede llevarse a cabo en paralelo con las actividades de implantación del diseño y de la programación. Debe ser planificada en el inicio del proyecto.
+
+
+Fundamentos de la prueba de software
+------------------------------------
+
+La prueba presenta una interesante contrariedad. Durante las fases anteriores de definición y desarrollo, se intenta construir el software partiendo de un concepto abstracto y llegando a una implementación tangible. A continuación, llega la prueba. Se crea una serie de casos de prueba que intentan demoler el software construido. De hecho, la prueba es uno de los pasos de la ingeniería del software que se puede ver como destructivo en lugar de constructivo.
+
+**Objetivos de la prueba**
+
+Nuestro objetivo es diseñar pruebas que sistemáticamentes saquen a la luz diferentes clases de errores, haciéndolo con la menor cantidad de tiempo y esfuerzo. Como ventaja secundaria, la prueba demuestra hasta que punto las funciones del software funcionan de acuerdo con las especificaciones y alcanzan los requisitos de rendimiento. Además, los datos que se van recogiendo a medida que se lleva a cabo la prueba proporcionan una buena indicación de la fiabilidad del software e indican la calidad del software como un todo. 
+
+**Principios:**
+
+1.	Probar todo es imposible, entonces hay que seleccionar lo que vamos a probar (buscando casos de prueba que sean representativos de un conjunto de casos problemáticos).
+2.	Un buen caso de prueba es aquel que tiene una alta probabilidad de detectar un error no detectado hasta entonces.
+3.	Una prueba tiene éxito si encuentra errores.
+4.	Las pruebas deberían planificarse mucho antes de que empiecen.
+5.	El principio de pareto es aplicable a la prueba del software: al 80% de todos los errores descubiertos durante las pruebas surgen al hacer un seguimiento de sólo del 20% de todos los módulos del programa. El problema, por supuesto, es aislar estos módulos sospechosos y probarlos concienzudamente.
+6.	Las primeras pruebas planeadas y ejecutadas se centran generalmente en módulos individuales del programa, luego en grupos integrados de módulos y finalmente en el sistema entero.
+7.	No son posibles las pruebas exhaustivas. Es posible, sin embargo, cubrir adecuadamente la lógica del programa y asegurarse de que se han aplicado todas las condiciones en el diseño a nivel de componente.
+8.	Para ser más efectivas, las pruebas deberían ser conducidas por un equipo independiente.
+
+
+**Planificación de la prueba:**
+
+La prueba de software es un conjunto de actividades que se pueden planificar por adelantado y llevar a cabo sistemáticamente. El plan contiene una serie de pasos en los que se sitúan las técnicas especificas de diseño de casos de prueba y los métodos de pruebas.
+
+El que desarrolla el software siempre es responsable de probar las unidades individuales del programa, asegurándose que cada una realice la función para la que fue diseñado. 
+
+La actividad de eliminar errores se denomina *depuración*.
+
+*Verificación:* chequear, controlar si el software ha sido desarrollo en forma correcta (interno).
+*Validación:* chequear si el software es el correcto (contra requerimientos del cliente).
+
+
+Prueba de caja negra y caja blanca
+----------------------------------
+
+Métodos de caja blanca
+^^^^^^^^^^^^^^^^^^^^^^
+
+cuentan con el código para hacer pruebas. Tienden a probar estructuras de control, condiciones, transformaciones de variables.
+
+Usa la estructura de control del diseño procedimental para obtener los casos de prueba. Puede obtener casos de prueba que (1) garanticen que se ejecutan por lo menos una vez todos los caminos independientes de cada módulo, (2) ejecuten todas las decisiones lógicas en su vertiente verdadera y falsa; (3) ejecuten todos los bucles en sus límites y con sus límites operacionales; (4) ejecuten las estructura internas de datos para asegurar su validez.
+
+
+**Camino básico:** generar un conjunto de casos de prueba que asegura que se ejecute por lo menos una vez cada sentencia del programa.
+
+1.	Construir el grafo de flujo asociado a un programa.
+2.	Determinar la complejidad ciclomática.
+3.	Determinar los caminos básicos independientes
+4.	Establecer los casos de prueba.
+
+
+**Represetar el algoritmo en el grafo de flujo**
+
+IMAGEN
+
+Cada círculo, denominado nodo del grafo de flujo, representa una o más sentencias procedimentales. Un sólo nodo puede corresponder a una secuencia de cuadros de procesos y a un rombo de decisión. Las flechas del grafo de flujo, denominado aristas o enlaces, representan flujo de control y son análogos a las flechas del grafo de flujo. Una arista debe terminar en un nodo, incluso aunque el nodo no represente ninguna sentencia procedimental
+
+IMAGEN
+
+**Complejidad ciclomática**
+
+Medida de la cantidad de bifurcaciones de un algoritmo. No tiene unidades, es una medida abstracta. Las áreas delimitadas por aristas y nodos se denominan regiones. Cuando contabilizamos las regiones incluimos el área exterior del grafo contando como otra región más. La complejidad ciclomática V(G) es una métrica del software que proporciona una medición cuantitativa de la complejidad lógica de un programa. El valor calculado como complejidad ciclomática define el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de pruebas que se deben realizar para asegurar que se ejecuta cada sentencia al menos una vez.
+
+
+.. Math::
+
+	V(G) = n° de regiones
+	V(G) = P + 1 donde P: cantidad de nodos predicados (de los que sale más de una arista)
+	V(G) = A - N + 2 donde A: cantidad de aristas, N: cantidad de nodos.
+
+
+
+
+
+
+
+
+
+
+
