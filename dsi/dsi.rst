@@ -291,7 +291,7 @@ c)	Entrada de datos:
 Herramientas para modelar la interfaz con el usuario
 ----------------------------------------------------
 
-**Árbol de navegación:** herramienta gráfica que modela las posiblidades de acción voluntaria que tiene el usuario. Es una herramienta interna para el desarrollo y para el usuario.
+**Árbol de navegación:** herramienta gráfica que modela las posibilidades de acción voluntaria que tiene el usuario. Es una herramienta interna para el desarrollo y para el usuario.
 
 
 **Diagrama de transición de estados:** herramienta gráfica que modela el comportamiento del sistema dependiente del tiempo a través de los distintos estados que éste puede tomar.
@@ -635,27 +635,261 @@ Usa la estructura de control del diseño procedimental para obtener los casos de
 
 **Represetar el algoritmo en el grafo de flujo**
 
-IMAGEN
+.. figure:: img/dsi14.png
+   :scale: 50%
+
+   Figura 14: Estructuras de control.
 
 Cada círculo, denominado nodo del grafo de flujo, representa una o más sentencias procedimentales. Un sólo nodo puede corresponder a una secuencia de cuadros de procesos y a un rombo de decisión. Las flechas del grafo de flujo, denominado aristas o enlaces, representan flujo de control y son análogos a las flechas del grafo de flujo. Una arista debe terminar en un nodo, incluso aunque el nodo no represente ninguna sentencia procedimental
 
-IMAGEN
 
-**Complejidad ciclomática**
+.. figure:: img/dsi15.png
+   :scale: 50%
 
-Medida de la cantidad de bifurcaciones de un algoritmo. No tiene unidades, es una medida abstracta. Las áreas delimitadas por aristas y nodos se denominan regiones. Cuando contabilizamos las regiones incluimos el área exterior del grafo contando como otra región más. La complejidad ciclomática V(G) es una métrica del software que proporciona una medición cuantitativa de la complejidad lógica de un programa. El valor calculado como complejidad ciclomática define el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de pruebas que se deben realizar para asegurar que se ejecuta cada sentencia al menos una vez.
-
-
-.. Math::
-
-	V(G) = n° de regiones
-	V(G) = P + 1 donde P: cantidad de nodos predicados (de los que sale más de una arista)
-	V(G) = A - N + 2 donde A: cantidad de aristas, N: cantidad de nodos.
+   Figura 15: Ejemplo.
 
 
+**Complejidad ciclomática:** medida de la cantidad de bifurcaciones de un algoritmo. No tiene unidades, es una medida abstracta. Las áreas delimitadas por aristas y nodos se denominan regiones. Cuando contabilizamos las regiones incluimos el área exterior del grafo contando como otra región más. La complejidad ciclomática V(G) es una métrica del software que proporciona una medición cuantitativa de la complejidad lógica de un programa. El valor calculado como complejidad ciclomática define el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de pruebas que se deben realizar para asegurar que se ejecuta cada sentencia al menos una vez.
+
+V(G) = n° de regiones
+V(G) = P + 1 donde P: cantidad de nodos predicados (de los que sale más de una arista)
+V(G) = A - N + 2 donde A: cantidad de aristas, N: cantidad de nodos.			
+
+
+**Camino básico independiente:** es el que incorpora un nodo que no es recorrido por un camino anterior. Básicos porque son simples. Independientes porque no hay otros que usen todos sus nodos.
+
+
+**Casos de prueba:** a cada camino le corresponde un caso de prueba.
+
+Me aseguro que se ejecuten todas las sentencias al menos una vez.
+
+Ejecutamos cada caso de prueba y comparamos los resultados obtenidos con los esperados. Una vez terminados todos los casos de prueba, el responsable de la prueba podrá estar seguro de que todas las sentencias del programa se han ejecutado por lo menos una vez. Es importante darse cuenta de que algunos caminos independientes no se pueden probar en forma aislada. O sea, la combinación de datos requerida para recorrer el camino no se puede conseguircon el flujo normal del programa. En tales casos, estos caminos se han de probar como parte de otra prueba de camino.
+
+
+**Pruebas de ciclos:** se centra exclusivamente en la validez de las construcciones de bucles.
+
+Prubas ciclo simple:
+
+*	No se ejecute.
+*	Se ejecute 1 vez.
+*	Se ejecute m veces 1 < m < n.
+*	Se ejecute n-1 veces.
+*	Se ejecute n veces.
+*	Se ejecute n+1 veces.
+
+
+Ciclos anidados:
+
+*	Comenzar por el bucle más interior. Establecer o configurar los demás bucles con sus valores mínimos.
+*	Llevar a cabo las pruebas de bucles simples para el bucle más interior.
+*	Progresar hacia afuera, llevando a cabo pruebas para el siguiente bucle, pero manteniendo todos los bucles externos en sus valores mínimos y los demás bucles candidatos en sus valores típicos.
+*	Continuar hasta que se han probado todos los bucles.
+
+
+Ciclos concatenados: Se pueden probar mediante el enfoque para los bucles simples, mientras cada uno de los bucles sea independiente del resto. Cuando los bucles no son independientes, se recomienda usar el enfoque aplicado para los bucles anidados.
+
+**Condiciones:** la prueba de condición es un método de diseño de casos de prueba que ejercita las condiciones lógicas contenidas en un módulo de un programa. Los tipos posibles de componentes en una condición pueden ser un operador lógico, una variable lógica, un par de paréntesis lógicos (que rodean a una condición simple o compuesta), un operador relacional o una expresión aritmética.
+
+**Prueba de flujo de datos:** es una como una prueba de escritorio, donde se siguen los valores de ciertas variables. Consiste en seguir a lo largo de toda la ejecución del programa el comportamiento de una variable o estructura de datos, desde que la variable comienza a existir, mientras sufre transformaciones y hasta que no se la usa más. Seguir en la ejecución a todas las variables es impracticable e imposible.
+
+El método es útil para algunas variables cruciales, conflictivas, globales, etc.
+Pensando para cuando el programa no funciona, hay un error y es necesario detectarlo. Se seleccionan caminos de prueba según la ubicación de las definiciones y los usos de las variables del programa. Es efectivo para la protección contra errores ya que las sentencias están relacionadas entre sí según las definiciones de los datos.
+
+
+Métodos de caja negra
+^^^^^^^^^^^^^^^^^^^^^
+
+No se cuenta con el código (archivos compilados y ejecutables). Tienden a probar la funcionalidad. Permiten obtener conjuntos de condiciones de entrada que ejecuten completamente todos los requisitos funcionales de un programa. La prueba de caja negra intenta encontrar errores de las siguientes categorias:
+
+1.	Funciones incorrectas o ausentes.
+2.	Errores de interfaz.
+3.	Errores en estructura de datos o en accesos con base de datos externas.
+4.	Errores de rendimiento.
+5.	Errores de inicialización y de terminación.
+
+
+**Partición equivalente:** se clasifican los casos de prueba, determinando clases válidas y clases inválidas, para determinar si el software funciona correctamente en cada caso.
+
+*	Rangos 3 clases:
+
+    -	Inválida (valores < rango).
+    -	Válida (rango).
+    -	Inválida (valores > rango).
+
+*	Valor determinado 3 clases:
+
+    -	Por debajo.
+    -	Igual.
+    -	Por encima.
+
+*	Valor de un conjunto 2 clases:
+
+    -	Inválida (valores que no pertenecen al conjunto).
+    -	Válida (valores pertenecientes al conjunto).
+
+*	Valor lógico 2 clases:
+
+    -	Verdadero.
+    -	Falso.
+
+
+**Análisis de valores límites:** es una técnica de diseño de casos de prueba que complementa a la partición equivalente. En lugar de seleccionar cualquier elemento de una clase de equivalencia, éste método lleva a la elección de casos de prueba en los extremos de la clase. En lugar de centrase solamente en las condiciones de entrada. 
+
+Directrices:
+
+1.	Diseñar casos de prueba para valores justo por arriba y por debajo de los límites del rango.
+2.	Generar casos de prueba que generan valores máximo y mínimo permitidos de salida.
+3.	Casos de prueba que ejerciten la estructura de datos en sus límites.
+
+
+**Comparación:** propone para un determinado conjunto de casos de prueba, ejecutar el programa que se quiere probar y uno que se sabe que funciona bien y comparar los resultados. Es poco practicable. Es más viable comparar con una tasa manual. Aquí puede ser más difícil determinar si la persona que lo hizo manualmente lo hizo mal, o si el sistema anda mal.
+
+**Grafos causa efecto:** es una herramienta que ayuda a comprender situaciones donde hay muchas condiciones y muchas acciones y se combinan de diferentes maneras.
+
+Se crea un grafo; enlaces que representan las relaciones entre los objetos; pesos de nodos que describen las propiedades de un nodo y pesos de enlaces que describen alguna característica de un enlace.
+
+Pasos a seguir:
+
+1.	Se listan para un módulo las causas (condiciones de entrada) y los efectos (acciones), asignando un identificador a cada uno de ellos.
+2.	Se desarrolla un grafo de causa-efecto.
+3.	Se convierte el grafo en una tabla de decisión.
+4.	Se convierten las reglas de la tabla de decisión en casos de prueba.
+
+Se obtiene casos de prueba atravesando el grafo y cubriendo cada una de las relaciones mostradas.
+
+
+Diseño de casos
+---------------
+
+**Caso de prueba:** es el conjunto de valores de variables y condiciones lógicas que fuerzan la ejecución del software de una manera determinada.
+
+El primordial objetivo del diseño de casos de prueba es derivar un conjunto de pruebas que tengan la mayor probabilidad de descubrir los defectos del software. Debemos diseñar casos de prueba que tengan la mayor probabilidad de encontrar el mayot número de errores con el menor tiempo y esfuerzo. Cualquier producto puede ser probado de dos formas:
+
+1.	Conociendo la función especifica para la fue diseñado el producto, se pueden llevar a cabo pruebas que demuestran que cada función es alcanzada plenamente.
+2.	Conociendo el funcionamiento del producto, se pueden desarrollar pruebas que aseguren que la operación interna se ajusta a las especificaciones y que todos los componentes internos se han probado internamente.
+
+
+Estrategias de prueba
+---------------------
+
+Es un plan de prueba, un enfoque que define cómo se va a probar, qué se va a probar, qué métodos y técnicas se usarán.
+
+Cualquier estrategia de prueba debe incorporar la planificación de la prueba, el diseño de casos de prueba, la ejecución de las pruebas y la agrupación y evaluación de los datos resultantes. Una estrategia de prueba de software debe ser suficientemente flexible para promover la creatividad y la adaptibilidad. Al mismo tiempo, la estrategia debe ser suficientemente rígida para promover un seguimiento razonable de su planificación y la gestión a medida que progresa el proyecto.
+
+Características generales:
+
+*	La prueba comienza en el nivel de módulo y trabaja hacia afuera, hacia la integración de todo el sistema basado en computadora.
+*	Según el momento son apropiadas diferentes técnicas de prueba.
+*	La prueba la lleva a cabo el responsable del desarrollo de software y un grupo independiente de pruebas.
+*	La prueba y la depuración son actividades diferentes, pero la depuración se debe incluir en cualquier estrategia de prueba.
+
+Estrategias de prueba:
+ 	
++-------------+----------------------------------------------------------------------------------------+-----------------+--------------------------+--------------+
+| Prueba      | Qué cosa nos interesa probar                                                           | Etapa           | Técnica                  | Tipo         |
++=============+========================================================================================+=================+==========================+==============+
+| Unidad      | Código. Deseamos que los módulos funcionen bien. Aspectos funcionales de los módulos.  | Codificación    | Caja Negra - Caja Blanca | Verificación |
++-------------+----------------------------------------------------------------------------------------+-----------------+--------------------------+--------------+
+| Integración | Arquitectura. Deseamos que el aspecto estructural del sistema sea correcto. Interfaces | Diseño          | Caja Negra               | Verificación |
++-------------+----------------------------------------------------------------------------------------+-----------------+--------------------------+--------------+
+| Validación  | Requerimientos del cliente. Que el software sea el que el usuario necesita             | Análisis        | Caja Negra               | Validación   |
++-------------+----------------------------------------------------------------------------------------+-----------------+--------------------------+--------------+
+| Sistema     | Que la integración del software con otros objetos del sistema sea óptima               | Ing. de Sistema | Caja Negra               | Validación   |
++-------------+----------------------------------------------------------------------------------------+-----------------+--------------------------+--------------+
+
+
+**Unidad:** probar los módulos de manera individual.
+**Integración:** verificar que todos los módulos funcionan juntos (integrados).
+**Validación**: se prueban los requerimientos. Se asocia con la etapa de análisis.
+**Sistema:** probar el software en su entorno. Se asocia con la ingeniería de sistemas.
+
+
+Prueba de Unidad
+^^^^^^^^^^^^^^^^
+
+En un módulo nos interesa probar:
+
+*	Código.
+*	Estructuras de datos.
+*	Estructuras de control.
+*	Interfaz con otros módulos.
+*	Auto documentación.
+*	Manejo de errores.
+
+Se prueba la interfaz del módulo para asegurar que información fluye de forma adecuada hacia y desde la unidad del programa que está siendo probada. Se examinan las estructuras de datos locales para asegurar que los datos que se mantienen temporalmente conservan su integridad durante todos los pasos de ejecución del algoritmo. Se prueban las condiciones límites para asegurar que el módulo funciona correctamente en los límites establecidos. Se ejecutan todos los caminos independientes de la estructura de control con el fin de asegurar que todas las sentencias del módulo se ejecutan por lo menos una vez. Y, finalmente, se prueban todos los caminos de manejo de errores.
+
+Se deben diseñar casos de prueba para descubrir errores de las siguientes categorías:
+
+1.	Tipificación impropia o inconsistente.
+2.	Inicialización o valores erróneos.
+3.	Nombres de variables incorrectas.
+4.	Tipos de datos inconsistentes.
+5.	Excepciones de desbordamiento por arriba o por abajo, o de direccionamiento.
+
+
+Prueba de integración
+^^^^^^^^^^^^^^^^^^^^^
+
+Es una técnica sistemática para construir la estructura del programa mientras que se llevan a cabo pruebas para detectar errores asociados con interacción. Junta módulos y los hace funcionar juntos. Tenemos dos estrategias: ascendente y descendente.
+
+.. figure:: img/dsi6.png
+   :scale: 50%
+
+   Figura 16: Jerarquía de módulos.
+
+**Ascendente:** probar primero los módulos inferiores. Empieza la construcción y la prueba con los módulos atómicos (es decir, módulos de los niveles más bajos). Dado que los módulos se integran de abajo hacia arriaba, el proceso requerido de los módulos subordinado a un nivel dado siempre están disponibles y se elimina la necesidad de resguardo. Se puede implementar una estrategia de integración ascendente mediante los siguientes pasos:
+
+1.	Se combinan los módulos de bajo nivel en grupos que realizan una subfunción específica del software.
+2.	Se escribe un controlador para coordinar la entrada y la salida de los casos de prueba.
+3.	Se prueba el grupo.
+4.	Se eliminan los controladores y se combinan los grupos moviéndose hacia arriba por la estructura del programa.
+
+**Descendente:** probar primero los módulos superiores. Se integran los módulos moviéndose hacia abajo por la jerarquía de control, comenzando por el módulo de control principal. Los módulo subordinados al módulo de control principal se van incorporando en la estructura, bien de forma priemro-en-profundidad, o bien de forma primero-en-anchura. El proceso de integración en una serie de 5 pasos:
+
+1.	Se usa el módulo de control principal como controlador de la prueba, disponiendo de resguardo para todos los módulos directamente subordinados al módulos de control principal.
+2.	Dependiendo del enfoque de integración elegido se van sustituyendo los resguardos subordinados uno a uno por los módulos reales.
+3.	Se llevan a cabo pruebas cada vez que se integre un nuevo módulo.
+4.	Tras terminar cada conjunto de pruebas, se reemplaza otro resguardo con módulo real.
+5.	Se hace la prueba de regresión para asegurarse de que no se han introducido errores nuevos.
+
+El proceso continúa en el paso 2 hasta que se haya construido la estructura del programa entero.
+
+La principal desventaja del enfoque descendente es la necesidad de resguardos y las dificultades de prueba que puedan estar asociados con ellos. La principal desventaja de la integración ascendente es que el prorgama como entidad no existe hasta que se ha añadido el último módulo.
+
+La selección de una estrategia de integración depende de las características del software y de la planificación del proyecto. En general, lo mejor puede ser un enfoque combinado que use la descendente para los niveles superiores de la estructura del programa, junto con la ascendente para los niveles subordinados.
+
+
+Prueba de validación
+^^^^^^^^^^^^^^^^^^^^
+
+La validación se consigue cuando el software funciona de acuerdo las expectativas razonables del cliente. Probar requerimientos, comprobar que el análisis es el correcto. Hay dos aspectos a probar:
+
+1.	**Repaso de la configuración:** asegura que todos los elementos de la configuración se han desarrollado en forma adecuada, que satisfaga los requerimientos funcionales y de rendimiento, que la documentación es correcta, que sea portable y fácil de mantener.
+2.	**Pruebas alfa y beta:** como es imposible ver cómo un cliente usará realmente un programa, hay dos posibilidades de hacer la validación con el usuario: en la organización, fuera de la organización.
+
+     a)	La prueba alfa se lleva a cabo en el lugar de desarrollo pero por un cliente. se usa el software de forma natural con el desarrador como observador del usuario y registrando los errores y los problemas de uso. Las pruebas alfa se llevan a cabo en un entorno controlado (tiene alto costo adicional, todas las observaciones son tomadas).
+     b)	La prueba beta se lleva a cabo por los usuarios finales del software en los lugares de trabajo de los clientes. A diferencia de la prueba alfa, en general, el desarrador no esta presente. Así, la prueba beta es una aplicación en vivo del software en un entorno que no puede ser controlado por el desarrador. El cliente registra todo los problemas que encuentra durante la prueba beta e informa a intervalos regulares al desarrador.
 
 
 
+Pruebas de sistema
+^^^^^^^^^^^^^^^^^^
+
+Está constituido por una serie de pruebas diferentes cuyo propósito primordial es ejercitar profundamente el sistema basado en computadora. Aunque cada prueba tiene un propósito diferente, todos trabajan para verificar que se han integrado adecuadamente todos los elementos del sistema y que realizan las funciones apropiadas. Aspectos de:
+
+*	Seguridad (controlar varios niveles).
+*	Rendimiento (performance: qué tan bien administra el tiempo).
+*	Recuperación.
+*	Resistencia (evalúa cómo reacciona el sistema ante golpes del usuario).
+
+
+**Prueba de seguridad:** intenta verificar que los mecanismos de protección incorporados en el sistema lo protegerán de accesos impropios. La seguridad del sistema debe ser probada en su invulnerabilidad frente a un ataque frontal, pero también debe probarse en su invulnerabilidad a ataques por los francos o por la retaguardia. El papel del diseñador de sistema es hacer que el costo de entrada ilegal sea mayor que el valor de la información obtenida.
+
+**Prueba de rendimiento:** esta diseñada para probar el rendimiento del software en tiempo de ejecución dentro del contexto de un sistema integrado. El propósito es asegurar que el sistema pueda manejar el volumen de datos y transacciones de entrada especificado en el modelo de implantación del usuario, además de asegurar que tenga el tiempo de respuesta requerido.
+
+Esto puede requerir que el equipo que realiza el proyecto simule una gran red de terminales en línea, de manera que se pueda engañar el sistema para que crea que está operando con una gran carga. 
+
+Las pruebas de rendimiento van emparejadas con las pruebas de resistencia y requieren de instrumentación tanto de software como de hardware.
 
 
 
