@@ -47,7 +47,7 @@ Niveles de diseño desde el punto de vista técnico
 
 **El proceso de diseño**
 
-El diseño de software es un proceso iterativo a través del cual se traducen los requisitos en una representación del software. A lo largo del proceso de diseño, se evalúa la calidad del diseño con una serie de revisiones técnicas formales. Hay tres características que sirven de directrices para la evaluación de un buen diseño:
+El diseño de software es un proceso iterativo a través del cual se traducen los requisitos en una representación del software. A lo largo del proceso de diseño, se evalúa la calidad del diseño con una serie de revisiones técnicas formales. Hay dos características que sirven de directrices para la evaluación de un buen diseño:
 
 1.	El diseño debe ser una guía que puedan leer y entender los que construyan el código y los que prueban y mantienen el software.
 
@@ -60,7 +60,7 @@ Princicios del diseño: el diseño de software es tanto un proceso como un model
 *	El diseño no deberá inventar nada que ya esté inventado: el tiempo de diseño se deberá invertir en la representación verdadera de ideas nuevas y en la integración de esos patrones ya existentes.
 *	El diseño deberá minimizar la distancia intelectual entre el software y el problema: la estructura del diseño del software (siempre que sea posible) imita la estructura del dominio del problema.
 *	El diseño deberá presentar uniformidad e integración: un diseño es uniforme si parece que fue una persona la que lo desarrolló por completo. Se integra si se tiene cuidado a la hora de definir interfaces entre los componentes del diseño.
-*	El diseño deberá'estructurarse para admitir cambios.
+*	El diseño deberá estructurarse para admitir cambios.
 *	El diseño deberá estructurarse para degradarse poco a poco: debe diseñarse para adaptarse a circunstancias inusuales, y si debe terminar de funcionar, que lo haga de forma suave.
 *	El diseño no es escribir código y escribir código no es diseñar: incluso cuando se crean diseños procedimentales para componentes de programas, el nivel de abstracción del modelo de diseño es mayor que el código fuente.
 *	El diseño deberá evaluarse en función de la calidad mientras se va creando, no después de terminarlo.
@@ -103,7 +103,7 @@ Hay un número M de módulos que resultaría en un costo de desarrollo mínimo, 
 
 **Diseño Modular:** un diseño modular reduce la complejidad, facilita los cambios y hace más fácil la implementación al fomentar el desarrollo en paralelo de diferentes partes de un sistema.
 
-**Independencia funcional:** es un atributo de los módulos que determina o describe hasta que punto el módulo cumple con una única función específica, y no necesita para eso de otros de módulos. Un módulo funcionalmente independiente es un módulo'bien encapsulado.
+**Independencia funcional:** es un atributo de los módulos que determina o describe hasta que punto el módulo cumple con una única función específica, y no necesita para eso de otros de módulos. Un módulo funcionalmente independiente es un módulo bien encapsulado.
 
 El software con módulos independientes, es fácil de desarrollar porque su función puede ser partida y se simplifican las interfaces, son más fáciles de mantener, y se reduce la programación de errores y se fomenta la reutilización de los módulos. La independencia se mide usando dos criterios cualitativos: cohesión y acoplamiento.
 
@@ -137,7 +137,7 @@ Algunos factores son:
 1.	Corrección: hasta dónde satisface un programa su especificación y logra los objetivos de la misión del cliente.
 2.	Fiabilidad: hasta dónde se puede esperar que un programa lleve a cabo su función pretendida con la exactitud requerida.
 3.	Eficiencia: hasta dónde el programa cumple su objetivo con la mejor utilización de los recursos.
-4.	Integridad: hasta dónde se puede controlar el acceso al software o alos datos por personas no autorizadas.
+4.	Integridad: hasta dónde se puede controlar el acceso al software o a los datos por personas no autorizadas.
 5.	Facilidad de uso: el esfuerzo necesario para aprender, operar, preparar los datos de entrada e interpretar las salidas de un pograma.
 6.	Facibilidad de mantenimiento: el esfuerzo necesario para localizar y arreglar un error en un programa.
 7.	Flexibilidad: el esfuerzo necesario para modificar un programa.
@@ -178,15 +178,15 @@ Aspectos del diseño de interfaz
 2.	Comportamiento:
 
 	*	Personalidad: tiene que ver con cada persona.
-	*	Experiencia: (novatos, intermitentes, expertos).
+	*	Experiencia: (novatos, intermedios, expertos).
 
 
 **Aspectos técnicos:** nos preocupan:
 
 1.	Dispositivos: se deben definir dispositivos de entrada (mouse, teclado, lectores, cámaras, pantallas sensibles al tacto) y de salida (impresora, pantalla).
 2.	Diseño de entrada - salida: problema de aumentar la productividad del usuario. Implica el diseño de la entrada y salida de datos. Formularios.
-3.	Niveles de ayuda: toda interfaz debe tener alguún nivel de ayuda (sensible al contexto, en línea, teclas calientes).
-4.	Retroalimentación: es la informaciónque le damos al usuario constantemente sobre los resultados de lo que está haciendo. (Archivos log, barra de progreso, porcentajes, manejo de errores).
+3.	Niveles de ayuda: toda interfaz debe tener algún nivel de ayuda (sensible al contexto, en línea, teclas calientes).
+4.	Retroalimentación: es la información que le damos al usuario constantemente sobre los resultados de lo que está haciendo. (Archivos log, barra de progreso, porcentajes, manejo de errores).
 5.	Tipo de interfaz: existen varios tipos.
 
 	*	De comandos: DOS es una interfaz de comandos. Requiere conocimiento del usuario.
@@ -207,7 +207,7 @@ El diseño de la entrada también incluye la especificación de los medios por l
 
 Los controles de entrada proporcionan medios para asegurar que sólo los usuarios autorizados tengan acceso al sistema, garantizar que las transacciones sean aceptables, validar los datos para comprobar su exactitud y determinar si se han omitido datos que son necesarios.
 
-**Validación de la entrada:** el término general dado a los métodos cuya finalidad es detectar errores en la entrada es *validación de entradas*. Tres categorías principales de métodos'tienen que ver con la verificación de la transacción, la verificación de los datos de la transacción y el cambio de estos últimos.
+**Validación de la entrada:** el término general dado a los métodos cuya finalidad es detectar errores en la entrada es *validación de entradas*. Tres categorías principales de métodos tienen que ver con la verificación de la transacción, la verificación de los datos de la transacción y el cambio de estos últimos.
 
 **Verificación de la transacción:** lo primero y lo más importante es identificar todas las transacciones que no son válidas. Las transacciones	pueden caer en esta categoría porque están incompletas, no autorizadas e incluso fuera de lugar.
 
@@ -323,7 +323,7 @@ Modelos
 
 De manera general, el modelo de implantación del usuario cubre los siguientes cuatro puntos:
 
-1.	Distribución del modelo esencial antre personas y máquinas. Se determina la frontera de automatización. Basándose en interacciones entre el usuario, el analista y el equipo de implantación, se autorizará parte de las actividades del modelo esencial y otras se identificarán como actividades manuales.
+1.	Distribución del modelo esencial entre personas y máquinas. Se determina la frontera de automatización. Basándose en interacciones entre el usuario, el analista y el equipo de implantación, se autorizará parte de las actividades del modelo esencial y otras se identificarán como actividades manuales.
 2.	Detalles de la interacción hombre-máquina. Se determina la interfaz humana. Es la actividad que consume más tiempo e involucra la elección de los dispositivos de entrada y salida, el formato de todas las entradas y salidas, y la secuencia y los tiempos de entradas y salidas en un sismtea en línea. No se diseña, sólo se especifica.
 3.	Actividades manuales que se podrían requerir. Se identifican las actividades de apoyo manual adicional necesarias para asegurar la integridad del sistema.
 4.	Restricciones operativas que el usuario desea imponer al sistema, entre las que se cuentan volumen de datos, de tiempo de respuesta, restricciones ambientales, de seguridad y otras.
@@ -340,7 +340,7 @@ De manera general, el modelo de implantación del usuario cubre los siguientes c
 
 Pasos del modelo de programas:
 
-1.	Refinamiento del DFD: cada proceso del DFD se puede convertir en un módulo. Debo llegar a procesos (móduloś) elementales.
+1.	Refinamiento del DFD: cada proceso del DFD se puede convertir en un módulo. Debo llegar a procesos (módulos) elementales.
 2.	Determinación de tipos de flujos.
 3.	Determinación de límite de flujos (necesario para el paso 4).
 4.	Factorización para derivar la estructura. A cada tipo de flujo le queremos asignar un tipo de estructura.
@@ -382,7 +382,7 @@ Todo sistema tiene tres características:
 No se los puede analizar aislados.
 
 *	Aferentes: su función principal dentro de la estructura es la de capturar datos para su procesamiento.
-*	Eferentes: son módulos'que sacan datos del sistema.
+*	Eferentes: son módulos que sacan datos del sistema.
 *	Transformadores: transforman datos.
 *	Coordinadores: no realizan transformación, sólo coordinan la invocación de otros.
 
@@ -401,7 +401,7 @@ Análisis de transformación
 Es un conjunto de pasos de diseño que permite convertir un DFD, con características de transformación, en una plantilla predefinida para la estructura del programa.
 
 1.	Refinación de DFD. La información obtenida de los modelos de análisis contenidos en la especificación de requisitos del software se refina para obtener mayor detalle.
-2.	Identificación de rama aferente. rama eferente y el centro de transformación. Los límites del flujo de entrada y salida son interpretados.
+2.	Identificación de rama aferente, rama eferente y el centro de transformación. Los límites del flujo de entrada y salida son interpretados.
 3.	Factorización en una estructura del 1° nivel. Provoca una estructura de programa en la que los módulos del nivel superior realizan la toma de decisiones y los módulos del nivel inferior realizan la mayoría del trabajo de entrada, cálculos y salida.
 4.	Factorización de cada rama de la estructura.
 5.	Refinamiento aplicado heurística de diseño.
@@ -500,7 +500,7 @@ El proceso unificado, esta basado en componentes (pieza de funcionalidad entrega
 
 **Dirigido por casos de uso:** un caso de uso es un fragmento de funcionalidad del sistema que proporciona al usuario un resultado importante. Todos los casos de uso juntos constituyen el modelo de casos de uso, el cual describe la funcionalidad total del sistema.
 
-Dirigido por casos de uso, quiere decir, que el proceso de desarrollo sigue un hila que avanza a través de una serie de flujos de trabajo que parten de los casos de uso. El objetivo es encontrar los verdaderos requisitos y representarlos de modo adecuado para los usuarios, clientes y desarrolladores.
+Dirigido por casos de uso, quiere decir, que el proceso de desarrollo sigue un hilo que avanza a través de una serie de flujos de trabajo que parten de los casos de uso. El objetivo es encontrar los verdaderos requisitos y representarlos de modo adecuado para los usuarios, clientes y desarrolladores.
 
 Los casos de usos proporcionan un medio sistemático e intuitivo de la captura de requisitos funcionales y dirige todo el proceso de desarrollo.
 
@@ -508,15 +508,21 @@ Los casos de usos proporcionan un medio sistemático e intuitivo de la captura d
 *	Dirigir el proceso: el proceso progresa a través de una serie de flujos de trabajo que inician con los casos de uso. Estos ayudan a encontrar las clases, desarrollar interfaces de usuario, no sólo inician el proceso, sino que también lo enlazan. Ayudan a los jefes del proyecto a planificar, dan soporte a la trazabilidad a través de los modelos, esto hace más fácil mantener la integridad del sistema y conservar actualizado al sistema en su conjunto cuando tenemos requisitos cambiantes.
 *	Idear la arquitectura: ayudan a llevar a cabo el proceso iterativo, obteniendo incrementos. Ayudan a idear la arquitectura mediante la selección de casos de uso significativos arquitectónicamente. También ayudan a la redacción del manual de usuario ya que un caso de uso es una manera de usar el sistema.
 
-**Centrado en la arquitectura:** la arquitectura en un sistema software se describe mediante diferentes vistas del sistema en construcción. El concepto de arquitectura software incluye los aspectos estáticos y dinámicos más significativos del sistema. El arquitecto modelo el sistema para darle forma, para ello deben trabajar en los casos de usos claves. Podemos decir que el arquitecto:
+**Centrado en la arquitectura:** el papel de la arquitectura software es parecido al papel que juega la arquitectura en la construcción de edificios. El edificio se contempla desde varios puntos de vista: estructura, servicios, fontanería, electricidad, etc. La arquitectura en un sistema de software se describe mediante diferentes vistas del sistema en construcción. El concepto de arquitectura software incluye los aspectos estáticos y dinámicos más significativos del sistema.
 
-*	Trabaja con un subconjunto de casos de uso específicos, aquellos que representan la funcionalidad del sistema, cada caso de uso se especifica en detalle y se realizan en termino de subsistemas, clases y componentes.
-*	A medida que un caso de uso se especifica y maduran, se descubre más de la arquitectura. Esto a la vez lleva a la madurez de más casos de uso.
+¿Cómo se relacionan los casos de uso y la arquitectura? Cada producto tiene tanto una funcionalidad como una forma. Ninguna es suficiente por sí misma. Estas dos fuerzas deben equilibrarse para obtener un producto con éxito. En esta situación, la función corresponde a los casos de uso y la forma a la arquitectura. Debe haber interacción entre los casos de uso y la arquitectura. Es un problema del tipo el huevo y la gallina. Por un lado, los casos de uso deben encajar en la arquitectura cuando se llevan a cabo. Por otro lado, la arquitectura debe permitir el desarrollo de todos los casos de uso requeridos, ahora y en el futuro. En realidad, tanto la arquitectura como los casos de uso deben evolucionar en paralelo.
+
+El arquitecto modela el sistema para darle forma. Para encontrar esa forma los arquitectos deben trabajar sobre la comprensión general de las funciones claves, es decir sobre los casos de uso claves del sistema (de 5 a 10%). Podemos decir que el arquitecto:
+
+
+*	Crea un esquema en borrador de la arquitectura (tentativa) comenzando por la parte de la arquitectura que no es específica de los casos de uso (por ejemplo: la plataforma).
+*	Trabaja con un subconjunto de casos de uso especificados, aquellos que representen la funcionalidad del sistema, cada caso de uso se especifica en detalle y se realizan en términos de subsistemas, clases, componentes.
+*	A medida que los casos de uso se especifican y maduran, se descubre más de la arquitectura. Esto a su vez, lleva a la maduración de más casos de uso.
 
 Este proceso continua hasta que se considere que la arquitectura es estable.
 
 
-**Iterativo e incremental:** las iteraciones hacen referencia a pasos en el flujo de trabajo y los incrementos al crecimiento del producto. Los beneficios de un sistema iterativo controlado son:
+**Iterativo e incremental:** es práctico dividir el trabajo en partes más pequeñas o miniproyectos. Cada miniproyecto es una iteración que resulta en un incremento. Las iteraciones hacen referencia a pasos en el flujo de trabajo, y los incrementos, al crecimiento del producto. Para una efectividad máxima, las iteraciones deben estar controladas; esto es, deben seleccionarse y ejecutarse de una forma planificada. Los beneficios de un sistema iterativo controlado son:
 
 *	Reduce el costo de los riegos a los constos de un sólo incremento.
 *	Reduce el riesgo de no sacar al mercado el producto en el calendario previsto.
@@ -569,14 +575,18 @@ Los hitos permiten a los directores tomar ciertas decisiones cruciales antes de 
    Figura 15: Fases dentro de un ciclo.
 
 
-*	**Fase de inicio (establece la viabilidad):** se desarrolla una descripción del producto final a partir de una buena idea y se presenta el análisis de negocio para el producto. Se lleva a cabo mediante:
+**Fase de inicio (establece la viabilidad):** se desarrolla una descripción del producto final a partir de una buena idea y se presenta el análisis de negocio para el producto. Esencialmente, esta fase responde a las siguientes preguntas: ¿Cuáles son las principales funciones del sistema para sus usuarios más importante? ¿Cómo podría ser la arquitectura del sistema? ¿Cuál es el plan de proyecto y cuánto costará desarrollar el producto?.
+
+La respuesta a la primera pregunta se encuentra en un modelo de casos de uso simplificado que contenga los casos de uso más críticos. Cuando lo tengamos, la arquitectura es provisional, y consiste típicamente en un simple esbozo que muestra los subsistemas más importantes. En esta fase, se identifican y priorizan los riesgos más importantes, se planifica en detalle la fase de elaboración, y se estima el proyecto de manera aproximada.
+	
+Se lleva a cabo mediante:
 
     -	Identificación y reducción de los riesgos críticos para la viabilidad del sistema.
     -	Creación de una arquitectura candidata a partir  del desarrollo de un subconjunto clave de los requerimientos, pasado por el modelo de casos de uso.
     -	Realización de una estimación inicial de costo, calendario y calidad del producto.
     -	El inicio del análisis de negocio, por el cual el proyecto parece que merece la pena económicamente.
      
-*	**Fase de elaboración (se centra en la factibilidad):** se especifican en detalle la mayaría de los casos de uso del producto y se diseña la arquitectura del sistema. La relación entre la arquitectura del sistema y el propio sistema es primordial. La arquitectura se expresa en forma de vistas de todos los modelos del sistema, los cuales juntos representan al sistema entero (esqueleto y piel). Esto implica que hay vistas que hay vistas arquitectónicas del modelo de casos de uso, del modelo de análisis, del modelo de diseño, del modelo de implementación y modelo de despliegue. La vista del modelo de implementación incluye componentes para probar que la arquitectura es ejecutable. Durante la fase de desarrollo, se realizan los casos de uso más críticos que se identificaron en la fase de comienzo. El resultado de esta fase es una línea base de la arquitectura. Se lleva a cabo mediante.
+**Fase de elaboración (se centra en la factibilidad):** se especifican en detalle la mayaría de los casos de uso del producto y se diseña la arquitectura del sistema. La relación entre la arquitectura del sistema y el propio sistema es primordial. La arquitectura se expresa en forma de vistas de todos los modelos del sistema, los cuales juntos representan al sistema entero (esqueleto y piel). Esto implica que hay vistas arquitectónicas del modelo de casos de uso, del modelo de análisis, del modelo de diseño, del modelo de implementación y modelo de despliegue. La vista del modelo de implementación incluye componentes para probar que la arquitectura es ejecutable. Durante la fase de desarrollo, se realizan los casos de uso más críticos que se identificaron en la fase de comienzo. El resultado de esta fase es una línea base de la arquitectura. Se lleva a cabo mediante.
 
     -	La identificación y reducción de los riesgos que afectan de manera significativa a la construcción del sistema.
     -	La especificación de la mayoría de los casos de uso que representan la funcionalidad que han de desarrollarse.
@@ -585,14 +595,14 @@ Los hitos permiten a los directores tomar ciertas decisiones cruciales antes de 
     -	La realización de una estimación con límites suficientemente ajustados como para justificar su inversión.
     -	La terminación del análisis de negocio - el proyecto vale la pena.
 
-*	**Fase de construcción (construye el sistema):** se creal el producto, se añaden los músculos (software terminado) al esqueleto (arquitectura). En esta fase, la línea base de la arquitectura crece hasta convertirse en el sistema completo. La descripción evoluciona hasta convertirse en un producto preparado para ser entregado a la comunidad de usuarios. El grueso de los recursos requeridos se emplea durante esta fase del desarrollo. Al final de esta fase, el producto contiene todos los casos de uso que la dirección y el cliente han acordado para el desarrollo de esta versión. Sin embargo, puede que no está completamente libre de defectos. Muchos de estos defectos se descubrirán y solucionarán durante la fase de transición. La pregunta decisiva es: ¿cubre el producto las necesidades de algunos usuarios de manera suficiente como para hacer una primera entrega?. Se lleva a cabo.
+**Fase de construcción (construye el sistema):** se creal el producto, se añaden los músculos (software terminado) al esqueleto (arquitectura). En esta fase, la línea base de la arquitectura crece hasta convertirse en el sistema completo. La descripción evoluciona hasta convertirse en un producto preparado para ser entregado a la comunidad de usuarios. El grueso de los recursos requeridos se emplea durante esta fase del desarrollo. Al final de esta fase, el producto contiene todos los casos de uso que la dirección y el cliente han acordado para el desarrollo de esta versión. Sin embargo, puede que no esté completamente libre de defectos. Muchos de estos defectos se descubrirán y solucionarán durante la fase de transición. La pregunta decisiva es: ¿cubre el producto las necesidades de algunos usuarios de manera suficiente como para hacer una primera entrega?. Se lleva a cabo.
 
     -	La extensión de la identificación, descripción y realización de los casos de uso a todos los casos de uso.
     -	La finalización del análisis, diseño. Implementación y prueba.
     -	El mantenimiento de la integridad de la arquitectura, modificándola cuando sea necesario.
     -	La monitorización de los riesgos críticos y significativos arrastrados desde las dos primeras fases y su mitigación si se materializan.
     
-*	**Fase de transición (se mete en el entorno de usuario):** cubre el periodo durante el cual el producto se convierte en versión beta. En la versión beta un número reducido de usuarios con experiencia prueba el producto e informa defectos y deficiencias. Los desarrolladores corrigen los problemas e incorporan algunas de las mejoras sugeridas en una versión general dirigida a la totalidad de la comunidad de usuarios. La fase de transición conlleva como la fabricación, formación del cliente, el proporcionar una línea de ayuda y asistencia, y la corrección de los defectos que se encuentren tras la entrega. El equipo de mantenimiento suele dividir esos defectos en dos categorías: los que tienen suficiente impacto en la operación para justificar una versión incrementada (versión delta) y los que pueden corregirse en la siguiente versión normal. Se lleva a cabo mediante.
+**Fase de transición (se mete en el entorno de usuario):** cubre el periodo durante el cual el producto se convierte en versión beta. En la versión beta un número reducido de usuarios con experiencia prueba el producto e informa defectos y deficiencias. Los desarrolladores corrigen los problemas e incorporan algunas de las mejoras sugeridas en una versión general dirigida a la totalidad de la comunidad de usuarios. La fase de transición conlleva como la fabricación, formación del cliente, el proporcionar una línea de ayuda y asistencia, y la corrección de los defectos que se encuentren tras la entrega. El equipo de mantenimiento suele dividir esos defectos en dos categorías: los que tienen suficiente impacto en la operación para justificar una versión incrementada (versión delta) y los que pueden corregirse en la siguiente versión normal. Se lleva a cabo mediante.
 
     -	Preparar el lugar donde se implantará el sistema.
     -	Aconsejar al cliente sobre la actualización del entorno, en los que se supone que el software va a funcionar.
