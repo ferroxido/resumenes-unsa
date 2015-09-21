@@ -6,6 +6,8 @@ Resumen final de Diseño de sistemas de información
 Unidad 1: Fundamentos del Diseño
 ================================
 
+El **diseño de sistemas** es la actividad de aplicar métodos, técnicas y herramientas, con el objeto de definir un proceso, dispositivo o sistema con el suficiente nivel de detalle como para permitir su realización física. El diseño es un proceso que termina en una definición rigurosa. A mayor definición se deja menos riesgo de equivocación al programador. Es el proceso de planificar, reemplazar o complementar un sistema organizacional existente.
+
 
 Diagrama del desarrollo
 ------------------------
@@ -477,6 +479,8 @@ Pressman propone además:
 Unidad 4: Diseño orientado a objetos
 ====================================
 
+¿Qué es orientado a objetos? Significa que el sistema se organiza como una colección de objetos que interactuán entre sí, y que contienen estructuras de datos y comportamiento.
+
 Se definen todas las clases, relaciones y comportamientos asociados con ellas que son relevantes al problema que se va a resolver. Para cumplirlo se deben ejecutar las siguientes tareas.
 
 1.	Los requisitos básicos del usuario deben comunicarse entre el cliente y el ingeniero de software.
@@ -490,8 +494,9 @@ Se definen todas las clases, relaciones y comportamientos asociados con ellas qu
 Proceso Unificado
 -----------------
 
-**Proceso unificado de desarrollo de software:** es un proceso de desarrollo de software (conjuno de actividades necesarias para transformar los requisitos de un usuario en sistema software) que se basa en componentes, es decir, el sistema software está formado por componentes software interconectados a través de interfaces bien definidas.
+**Proceso unificado de desarrollo de software:** es un proceso de desarrollo de software (conjunto de actividades necesarias para transformar los requisitos de un usuario en un sistema software). Sin embargo, el proceso unificado es más que un simple proceso; es un marco de trabajo genérico que puede especializarse para una gran variedad de sistemas software, para diferentes áreas de aplicación, diferentes tipos de organizaciones, diferentes niveles de aptitud y diferentes tamaños de proyectos.
 
+El proceso unificado, esta basado en componentes (pieza de funcionalidad entregable de manera independiente que provee acceso a sus servicios a través de interfaces), lo que quiere decir que el sistema de software en construcción esta formado por componentes software interconectados a través de interfaces bien definidas. El P.U se resume en tres aspectos clave: dirigido por casos de usos, centrado en la arquitectura, iterativo e incremental.
 
 **Dirigido por casos de uso:** un caso de uso es un fragmento de funcionalidad del sistema que proporciona al usuario un resultado importante. Todos los casos de uso juntos constituyen el modelo de casos de uso, el cual describe la funcionalidad total del sistema.
 
@@ -519,11 +524,29 @@ Este proceso continua hasta que se considere que la arquitectura es estable.
 *	Las necesidades del usuario no pueden definirse completamente al principio.
 
 
-**La vida del proceso unificado:** cada ciclo produce una versión nueva del sistema y cada versión es un producto preparado para su entrega. Para llevar a cabo el siguiente ciclo de manera más eficiente, los desarrolladores necesitan todas las presentaciones del software.
+La vida del proceso unificado
+-----------------------------
 
-*	Modelo de casos de uso: con todos los casos de uso y sus relaciones con los usuarios.
-*	Modelo de análisis: refina los casos de uso y establece la asignación de la funcionalidad del sistema, a un conjunto de objetos que proporcionan el comportamiento.
+El proceso unificado se repite a lo largo de una serie de ciclos que constituyen la vida de un sistema. Cada ciclo concluye con una versión del producto para los clientes.
+
+Cada ciclo consta de cuatro fases: inicio, elaboración, construcción y transición. Cada fase se subdivide a su vez en iteraciones.
+
+Cada ciclo produce una nueva versión del sistema, y cada versión es un producto preparado para su entrega. Consta de un cuerpo de código fuente incluido en componentes que puede compilarse y ejecutarse, además de manuales y otros productos asociados. El producto terminado incluye los requisitos, casos de uso, especificaciones no funcionales y casos de prueba. Incluye el modelo de la arquitectura y el modelo visual (artefactos modelados con UML).
+
+Aunque los componentes ejecutables sean los artefactos más importantes desde la perspectiva del usuario, no son suficiente por sí solos. Esto se debe a que el entorno cambia. A medida que el objetivo del sistema se comprende mejor, los propios requisitos pueden cambiar. Al final, los desarrolladores deben afrontar un nuevo ciclo, y los directores deben financiarlo. Para llevar a cabo el siguiente ciclo de manera eficiente, los desarrolladores necesitan todas las representaciones del producto software.
+
+**Modelos del proceso unificado**
+
+
+.. figure:: img/dsi14.png
+   :scale: 50%
+
+   Figura 14: Modelos del proceso unificado.
+
+*	Modelo de casos de uso: con todos los casos de uso y sus relación con los usuarios.
+*	Modelo de análisis: refinar los casos de uso con más detalle. Asignar funcionalidad a los objetos
 *	Modelo de diseño: define la estructura estática del sistema en forma de subsistemas, clases e interfaces y los casos de uso reflejados como colaboraciones entre los subsistemas, clases e interfaces.
+*	Modelo de despliegue: define nodos físicos y la correspondencia de componentes con esos nodos
 *	Modelo de implementación: incluye los componentes y las correspondencia de las clases con los componentes.
 *	Modelo de pruebas: describe los casos de prueba que verifican los casos de uso.
 
@@ -533,17 +556,27 @@ El sistema también debe tener un modelo de dominio o de negocio.
 *	Modelo de negocio: es una técnica para comprender los procesos de negocio de la organización. El objetivo es identificar los casos de uso del software y las entidades de negocio relevantes que el software debe soportar. Se ve soportado por dos tipos de modelo, modelo de casos de uso y modelo de objetos (modelo interno de un negocio que describe como se lleva a cabo un caso de uso de negocio por parte de un conjunto de usuarios).
 
 
-**Fases dentro del ciclo de vida:** el ciclo de vida se divide en cuatro fases, cada fase termina con un hito, que permite a los directores del proyecto tomar decisiones cruciales y controlar el progreso del trabajo
+Fases dentro de un ciclo de vida
+--------------------------------
+
+Cada ciclo se desarrolla a lo largo del tiempo. Este tiempo, a su vez, se divide en cuatro fases. A través de una secuencia de modelos, los implicados visualizan lo que está sucediendo en esas fases. Dentro de cada fase, los directores o los desarrolladores pueden descomponer adicionalmente el trabajo en iteraciones con sus incrementos resultantes. Cada fase termina con un hito. Cada hito se determina por la disponibilidad de un conjunto de artefactos; es decir, ciertos modelos o documentos han sido desarrollados hasta alcanzar un estado predefinido.
+
+Los hitos permiten a los directores tomar ciertas decisiones cruciales antes de que el trabajo pueda continuar con la siguiente fase, también permiten a la dirección y a los mismos desarrolladores, controlar el progreso según pasa por esos cuantro puntos clave.
+
+.. figure:: img/dsi15.png
+   :scale: 50%
+
+   Figura 15: Fases dentro de un ciclo.
 
 
-*	**Fase de inicio (establece la viabilidad):** se lleva a cabo mediante
+*	**Fase de inicio (establece la viabilidad):** se desarrolla una descripción del producto final a partir de una buena idea y se presenta el análisis de negocio para el producto. Se lleva a cabo mediante:
 
     -	Identificación y reducción de los riesgos críticos para la viabilidad del sistema.
     -	Creación de una arquitectura candidata a partir  del desarrollo de un subconjunto clave de los requerimientos, pasado por el modelo de casos de uso.
     -	Realización de una estimación inicial de costo, calendario y calidad del producto.
     -	El inicio del análisis de negocio, por el cual el proyecto parece que merece la pena económicamente.
      
-*	**Fase de elaboración (se centra en la factibilidad):** se lleva a cabo mediante.
+*	**Fase de elaboración (se centra en la factibilidad):** se especifican en detalle la mayaría de los casos de uso del producto y se diseña la arquitectura del sistema. La relación entre la arquitectura del sistema y el propio sistema es primordial. La arquitectura se expresa en forma de vistas de todos los modelos del sistema, los cuales juntos representan al sistema entero (esqueleto y piel). Esto implica que hay vistas que hay vistas arquitectónicas del modelo de casos de uso, del modelo de análisis, del modelo de diseño, del modelo de implementación y modelo de despliegue. La vista del modelo de implementación incluye componentes para probar que la arquitectura es ejecutable. Durante la fase de desarrollo, se realizan los casos de uso más críticos que se identificaron en la fase de comienzo. El resultado de esta fase es una línea base de la arquitectura. Se lleva a cabo mediante.
 
     -	La identificación y reducción de los riesgos que afectan de manera significativa a la construcción del sistema.
     -	La especificación de la mayoría de los casos de uso que representan la funcionalidad que han de desarrollarse.
@@ -552,14 +585,14 @@ El sistema también debe tener un modelo de dominio o de negocio.
     -	La realización de una estimación con límites suficientemente ajustados como para justificar su inversión.
     -	La terminación del análisis de negocio - el proyecto vale la pena.
 
-*	**Fase de construcción (construye el sistema):** su objetivo es crear un producto listo para ser distribuido como versión beta y ser sometido a prueba, ocupa más personal. Se lleva a cabo.
+*	**Fase de construcción (construye el sistema):** se creal el producto, se añaden los músculos (software terminado) al esqueleto (arquitectura). En esta fase, la línea base de la arquitectura crece hasta convertirse en el sistema completo. La descripción evoluciona hasta convertirse en un producto preparado para ser entregado a la comunidad de usuarios. El grueso de los recursos requeridos se emplea durante esta fase del desarrollo. Al final de esta fase, el producto contiene todos los casos de uso que la dirección y el cliente han acordado para el desarrollo de esta versión. Sin embargo, puede que no está completamente libre de defectos. Muchos de estos defectos se descubrirán y solucionarán durante la fase de transición. La pregunta decisiva es: ¿cubre el producto las necesidades de algunos usuarios de manera suficiente como para hacer una primera entrega?. Se lleva a cabo.
 
     -	La extensión de la identificación, descripción y realización de los casos de uso a todos los casos de uso.
     -	La finalización del análisis, diseño. Implementación y prueba.
     -	El mantenimiento de la integridad de la arquitectura, modificándola cuando sea necesario.
     -	La monitorización de los riesgos críticos y significativos arrastrados desde las dos primeras fases y su mitigación si se materializan.
     
-*	**Fase de transición (se mete en el entorno de usuario):** se lleva a cabo mediante.
+*	**Fase de transición (se mete en el entorno de usuario):** cubre el periodo durante el cual el producto se convierte en versión beta. En la versión beta un número reducido de usuarios con experiencia prueba el producto e informa defectos y deficiencias. Los desarrolladores corrigen los problemas e incorporan algunas de las mejoras sugeridas en una versión general dirigida a la totalidad de la comunidad de usuarios. La fase de transición conlleva como la fabricación, formación del cliente, el proporcionar una línea de ayuda y asistencia, y la corrección de los defectos que se encuentren tras la entrega. El equipo de mantenimiento suele dividir esos defectos en dos categorías: los que tienen suficiente impacto en la operación para justificar una versión incrementada (versión delta) y los que pueden corregirse en la siguiente versión normal. Se lleva a cabo mediante.
 
     -	Preparar el lugar donde se implantará el sistema.
     -	Aconsejar al cliente sobre la actualización del entorno, en los que se supone que el software va a funcionar.
@@ -569,6 +602,270 @@ El sistema también debe tener un modelo de dominio o de negocio.
     -	Modificar el software al detectar problemas que no habían sido previstos.
 
 
+
+El lenguaje de modelado UML
+---------------------------
+
+Es un lenguaje gráfico para visualizar, especificar, construir y documentar un sistema. UML ofrece un estándar para describir un "plano" del sistema (modelo), incluyendo aspectos conceptuales tales como procesos de negocio, funciones del sistema, y aspectos concretos como expresiones de lenguajes de programación, esquemas de bases de datos y compuestos reciclados.
+
+Es importante remarcar que UML es un "lenguaje de modelado" para especificar o para describir métodos o procesos. Se utiliza para definir un sistema, para detallar los artefactos en el sistema y para documentar y construir. En otras palabras, es el lenguaje en el que está descrito el modelo.
+
+Se puede aplicar en el desarrollo de software gran variedad de formas para dar soporte a una metodología de desarrollo de software (tal como el Proceso Unificado Racional o RUP), pero no especifica en sí mismo qué metodología o proceso usar.
+
+
+Modelos
+-------
+
+**Diagrama de clases de análisis:** un diagrama de clases es un tipo de diagrama estático que describe la estructura de un sistema mostrando sus clases, orientados a objetos. Se especifican atributos y métodos.
+
+*Diagramas de interacción (colaboración y secuencia)*
+
+**Diagrama de colaboración:** un diagrama de colaboración muestra cómo el control pasa de un objeto a otro a medida que se lleva a cabo el caso de uso y los mensajes que se envían entre los objetos
+
+
+**Diagrama de secuencia:** sirve para modelar las interacciones entre objetos de diseño. Muestra como el control pasa de un objeto a otro a medida que se ejecuta en caso de uso
+
+
+Patrones de diseño
+------------------
+
+Definen principios y estilos para mejorar la calidad de los diseños. Aplica el razonamiento para el diseño en una forma sistemática, racional y explicable.
+
+Un patron es un par problema/solución con nombre que se puede aplicar en nuevos contextos, con consejos de cómo aplicarlo en nuevas situaciones y discusiones sobre sus compromisos. Los patrones pretenden codificar conocimiento, estilos y principios existentes y que se han probado que son válidos.
+
+**Patrones GRASP (General Responsability Assignment Software Patterns ó Patrones generales de software para asignar responsabilidades)**
+
+
+**Patrón 1: experto en información**
+
+-	*Problema:* ¿Cuál es el principio general para asignar responsabilidades a los objetos?
+-	*Solución:* Asignar una responsabilidad al experto en información - la clase que tiene la información necesaria para realizar la responsabilidad.
+
+
+**Patrón 2: creador**
+
+-	*Problema:* ¿Quién debería ser el responsable de la creación de una nueva instancia de alguna clase?
+-	*Solución:* Asignar a la clase B la responsabilidad de crear una instancia de la clase A si:
+
+    +	B agrega objetos de A.
+    +	B contiene objetos de A.
+    +	B registra instancia de objetos de A.
+    +	B utiliza más estrechamente objetos de A.
+    +	B tiene los datos de inicialización para la creación de A (B es un experto con respecto a la creación de A).
+
+**Patrón 3: bajo acomplamiento**
+
+-	*Problema:* ¿Cómo soportar bajas dependencias, bajo impacto del cambio e incremento de la reutilización?
+-	*Solución:* Asignar una responsabilidad de manera que el acomplamiento permanezca bajo.
+
+
+**Patrón 4: alta cohesión**
+
+-	*Problema:* ¿Cómo mantener la complejidad manejable?
+-	*Solución:* Asignar una responsabilidad de manera que la cohesión permanezca alta.
+
+
+**Patrón 5: controlador**
+
+-	*Problema:* ¿Quién debe ser el responsable de gestionar un evento de entrada al sistema? Un evento del sistema de entrada es un evento generado por un actor externo y se asocia con operaciones del sistema.
+-	*Solución:* Asignar la responsabilidad de recibir o manejar un mensaje de evento del sistema a una clase que representa una de las siguientes opciones:
+
+    +	Representa el sistema global, dispositivo o subsistema.
+    +	Representa un escenario de caso de uso, en el que tiene lugar el evento del sistema.
+
+
+**Patrón 6: polimorfismo**
+
+-	*Problema:* ¿Cómo manejar las alternativas basadas en el tipo? ¿Cómo crear componentes software conectables?
+-	*Solución:* Cuando las alternativas o comportamientos relacionados varían según el tipo (clase), asigne la responsabilidad para el comportamiento utilizando operaciones polimorficas a los tipos para los que varía el comportamiento.
+
+
+**Patrón 7: fabricación pura** 
+
+-	*Problema:* ¿Qué objetos deberían tener la responsabilidad cuando no se quieren violar los objetivos de alta cohesión y bajo acomplamiento, u otros, pero las soluciones que ofrece el experto no son adecuadas?
+-	*Solución:* Asigne un conjunto de responsabilidades altamente cohesivo a una clase artificial o de conveniencia que no representa a un concepto del dominio del problema.
+
+
+**Patrón 8: indirección**
+
+-	*Problema:* ¿Dónde asignar una responsabilidad para evitar el acomplamiento directo entre dos (o más) cosas? ¿Cómo desacoplarlos objetos de manera que se soporte el bajo acomplamiento y el potencial para reutilizar permanezca más alto?
+-	*Solución:* Asigne la responsabilidad a un objeto intermedio que medie entre dos componentes o servicios de manera que no se acoplen directamente.
+
+
+**Patrón 9: variaciones protegidas o "No hables con extraños"**
+
+-	*Problema:* ¿Cómo diseñar objetos, subsistemas y sistemas de manera que las variaciones o inestabilidades de estos elementos no tengan un impacto no desable en otros elementos?
+-	*Solución:* indentifique los puntos de variaciones previstas o de inestabilidad; asigne responsabilidades para crear una interfaz estable alrededor de ellos.
+
+
+Unidad 5: Otros conceptos de diseño
+===================================
+
+Diseño orientado a la estructura de datos
+-----------------------------------------
+
+El diseño orientado a la estructura de datos transforma una representación de la estructura de datos en una representación del software. Al igual que las técnicas orientadas al flujo de datos, los desarrolladores del diseño orientado a la estructura de datos han de definir un conjunto de procedimientos de transformación que utilizan la estructura de datos como guía.
+
+El método de desarrollo de sisemas a partir de la estructura de datos, en lugar de comenzar el análisis examinando la jerarquía de la información, el método examina primero el contexto de la aplicación, es decir, como se mueven los datos entre productores y consumidores de la información, desde la perspectiva de uno de los productores o uno de los consumidores.
+
+Características:
+
+*	Derivan el diseño de programas a partir de los datos.
+*	La estructura de los datos afecta al diseño estructural y procedimental.
+*	La estructura de datos guía el procedimiento de transformación dentro de un programa.
+ 	
+Método:
+
+1.	Evaluar las características de la estructura de datos.
+2.	Representar los datos como secuencia, iteración y selección.
+3.	Transformar la representación de la estructura de datos en una jerarquía de control para el software.
+4.	Refinar la jerarquía del software.
+5.	Desarrollar la descripción procedimental del software.
+
+
+
+Metodología de Warnier-orr
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+pasos:
+
+1.	A partir de la información que se quiere obtener, identificar las salidas(reportes).
+2.	Indentificar las entradas necesarias para producir esas salidas.
+3.	Derivar el proceso de la entrada a la salida.
+
+**Diagrama de Warnier-orr:** diagramas jerárquicos que se utilizan para describir tanto la organización de datos como de procedimientos.
+
+Utiliza 4 construcciones básicas:
+
+*	Jerarquía: grupo anidado de conjuntos y subconjuntos representado por llaves anidadas.
+*	Secuencia: presenta componentes en el orden en que ocurren.
+*	Repetición: clásico loop en términos de programación.
+*	Selección: decisión entre conjuntos implicados.
+
+.. figure:: img/dsi19.png
+   :scale: 50%
+
+   Figura 19: Diagrama de Warnier-orr
+
+Este método ayuda al diseño de estructuras de programas identificando la salida y resultado del procedimiento, y entonces trabja hacia atrás para determinar los pasos y combinaciones de entrada necesarias para producirlo.
+
+*Elementos básicos:* los diagramas de Warnier-orr muestran los proceso y la secuencia en que se realizan. Cada proceso se define de una manera jerárquica, es decir, consta de un conjunto de subprocesos que lo definen. En cada nivel, el proceso se muestra en una llave que agrupa a sus componentes.
+
+*Uso de diagramas de Warnier-orr:* los diagramas de Warnier-orr ofrecen a los expertos en sistemas algunas ventajas. Tienen la ventaja de mostrar agrupaciones de procesos y los datos que deben transferir de nivel a nivel. Además, la secuencia de trabajo hacia atrás garantiza que el sistema estará orientado hacia el resultado.
+
+
+Consideraciones de diseño para modelos cliente/servidor
+-------------------------------------------------------
+
+**Arquitectura cliente servidor:** cualquier combinación de sistemas que pueden colaborar entre si para dar a los usuarios toda la información que ellos necesiten sin que tengan que saber donde esta ubicada.
+
+Es una arquitectura de procesamiento cooperativo donde uno de los componentes pide servicio a otro.
+
+Es la tecnología que proporciona al usuario final el acceso transparente a las aplicaciones, datos, servicios de cómputo o cualquier otro recurso del grupo de trabajo y/o, a través de la organización, en múltiples plataformas. El modelo soporta un medio ambiente distribuido en el cual los requerimientos de servicio hechos por estaciones de trabajo inteligentes o clientes resultan en un trabajo realizado por otros computadores llamados servidores.
+
+**Modelo cliente servidor:** división del software de una aplicación en dos conjuntos:
+
+*	Servicios: proveen funciones a programas externos. Pueden ser utilizados por aplicaciones diversas.
+*	Clientes: actúan como usuarios de los servicios definidos. Implementan realmente las aplicaciones.
+
+
+La tecnología denominada cliente-servidor es utilizada por todas las aplicaciones de internet/intranet:
+
+*	Un servidor es un ordenador remoto, en algún lugar de la red, que proporciona información según petición. El servidor envía la información solicitada.
+*	Un cliente funciona en su ordenador local, se comunica con el servidor remoto, y pide a éste información.
+
+Un único servidor típicamente sirve a una multitud de clientes, ahorrando a cada uno de ellos el problema de tener la información instalada y almacenada localmente.
+
+Los sistemas clientes-servidor pueden ser de muchos tipos, dependiendo de las aplicaciones que el servidor pone a disposición de los clientes. Entre otros existen:
+
+*	Servidores de impresión, mediante el cual los usuarios comparten impresoras.
+*	Servidores de archivos, con el cual los clientes comparten discos duros.
+*	Servidores de bases de datos, donde existe una única base de datos.
+*	Servidores de Lotus Notes, que permite el trabajo simultáneo de distintos clientes con los mismos datos, documentos o modelos.
+
+
+Diseño N-Tier (capas)
+---------------------
+
+Las tecnologías de bases de datos fomentaron la separación de los datos y la administación de los datos de los programas. Dicha separación está tan fija en nuestras mentes que es imposible recordar la época en la que no existían las bases de datos. Las tecnologías clientes-servidor de hoy progresaron más allá del concepto tradicional de dos niveles para abrazar las arquitecturas de tres niveles.
+
+Pensando en la arquitectura en términos lógicos, la arquitectura de la aplicación tiene tres niveles lógicos: servicios de presentación, servicios de procedimiento y servicios de datos.
+
+.. figure:: img/dsi20.png
+   :scale: 50%
+
+   Figura 20: Modelos de en capas.
+
+*	**Los servicios de presentación** proveen la interfaz de usuario al sistema. Esto puede ser logrado mediante las interfaces gráficas convencionales, navegadores web, cajeros automáticos, etc.
+*	**Los servicios de procesamiento**, conocidos como servicios de aplicación o del negocio, actúan como un buffer entre la presentación y los datos. En la arquitectura de tres niveles, todos los usuarios acceden a los datos a través del servicio de presentación, el cual se comunica con el servicio de procedimiento. Entoces, el servicio de procedimiento típico incluye búsquedas de clientes, actualizaciones de productos, etc. Este nivel podría incluir también servicios que no necesariamente estén en la capa de presentación, como procesos de batch programados o manejo automático de eventos.
+*	**El servicio de datos** provee los datos en los cuales el servicio de procesamiento trabaja. El servidor de bases de datos completa, por lo general, este rol.
+
+El middleware es la unión de todos los niveles entre sí. Cualquier arquitectura cliente-servidor con dos o tres niveles necesita un middleware para proporcionar el enlace de comunicación entre las capas. El middleware es provisto normalmente como un conjunto de herramientas que puede ser configurado para soportar un conjunto de servicios en particular. La internet o los servidores web a menudo son vistos como de tres niveles porque mueven la lógica del programa desde la computadora del cliente y se ubica entre la máquina del usuario y el servidor de bases de datos. Sin embargo estos servidores raras veces separan el servicio de procedimiento del servicio de presentación.
+
+Beneficios brindados por la arquitectura de tres niveles:
+
+*	**Escalabilidad**.
+*	**Flexibilidad (negocio)**. Los módulos de servicio pueden ser reemplazados rápidamente o actualizados para adaptarse a las necesidades del negocio. Las interfaces pueden ser diseñadas e implementadas en un período de tiempo reducido.
+*	**Flexibilidad (tecnológica)**. Con la arquitectura de tres niveles, se puede cambiar entre motores de bases de datos o migrar el nivel del medio a una plataforma diferente.
+*	**Reducción de costos**. Se puede elegir componentes o servicios comerciales, y reemplazar sólo los módulos que prefiera antes de la aplicación completa.
+*	**Calidad**. Se pueden desarrollar nuevos módulos que soporten necesidades de negocio individuales.
+*	**Mejora de servicio al cliente**. Múltiples interfaces pueden acceder al mismo servicio de negocio, brindando a los clientes, usuarios móviles y socios, accesos a la aplicación a través de una interface sencilla.
+*	**Ventajas competitivas**. Con la habilidad de ajustarse rápidamente a los cambios en las necesidades del negocio.
+*	**Reducción de riesgos**. Los servicios son desarrolados en piezas pequeñas combinando el desarrollo personalizado y componentes de proveedores especializados.
+
+
+Diseño de sistemas de tiempo real
+---------------------------------
+
+Un sistema de tiempo real puede definirse como aquel que controla un ambiente recibiendo datos, procesándolos y devolviéndolos con la suficiente rapidez como para influir en dicho ambiente en ese momento.
+
+Los sistemas de tiempo real generan alguna acción en respuesta a sucesos externos. Para realizar esta función, ejecutan una adquisición y control de datos a alta velocidad bajo varias restricciones de tiempo y fiabilidad. El recurso principal de un sistema de tiempo real es el tiempo. Otros recursos del sistema, tales como el tamaño de memoria, se tienen que adecuar al tiempo necesario para lograr los objetivos. Otras características de estos sistemas es la gran interacción con el entorno y la retroalimentación.
+
+Características:
+
+1.	Integración y rendimiento.
+2.	Manejo de interrupciones.
+3.	Sincronización y comunicación de tareas.
+4.	Bases de datos de tiempo real.
+5.	Lenguajes de tiempo real.
+
+El diseño de software de tiempo real debe incorporar todos los conceptos fundamentales asociados con el software de alta calidad. Además, el software de tiempo real posee un conjunto único de problemas para el diseñador: representación de las restricciones de tiempo, requisitos especiales para manejo de errores y recuperación de fallos y otros.
+
+**Integración y rendimiento** 
+
+En la mayoría de los casos, el rendimiento de un sistema de tiempo real se mide como una o más características relativas al tiempo, pero también se utilizan otras medidas, como la tolerancia al fallo. El rendimiento de un sistema de tiempo real se determina principalmente por su tiempo de respuesta y por la velocidad de transferencia de datos. Entre los parámetros clave que afectan al tiempo de respuesta está el cambio de contexto y la latencia de interrupción. Otros parámetros que afectan al tiempo de respuesta son la velocidad de cálculo y el acceso a memorias masivas.
+
+**Manejo de interrupciones**
+
+Una característica que sirve para distinguir a los sistemas de tiempo real de cualquier otro tipo es el manejo de interrupciones.
+
+*	Múltiples estímulos(interrupciones).
+*	Establecer prioridades.
+*	Almacenar información, de forma que puede reestablecer correctamente la tarea interrumpida.
+*	Evitar interbloqueos y bucles sin fin.
+
+**Sincronización y comunicación de tarea**
+
+Un sistema multitarea debe:
+
+*	Suministrar un mecanismo por que las tareas se pasen información unas a otras.
+*	Asegurar su sincronización.
+
+**Base de datos de tiempo real**
+
+Las bases de datos distribuidas constituyen el método preferido debido a que:
+
+*	La multitarea es común.
+*	Los datos se procesan frecuentemente en paralelo.
+*	Un fallo en la base de datos, raramente causará el fallo del sistema entero si se construyen con redundancia.
+
+**Lenguajes de tiempo real**
+
+Debido a los requisitos especiales de rendimiento y de fiabilidad demandados por los sistemas de tiempo real, es importante la elección del lenguaje de programación. Las características que lo diferencian de un lenguaje de propósito general son:
+
+*	Capacidad multitarea.
+*	Construcciones para implementación directa de funciones de tiempo real.
+*	Características modernas de programación.
 
 
 Unidad 6: Prueba de software
@@ -635,18 +932,18 @@ Usa la estructura de control del diseño procedimental para obtener los casos de
 
 **Represetar el algoritmo en el grafo de flujo**
 
-.. figure:: img/dsi14.png
+.. figure:: img/dsi16.png
    :scale: 50%
 
-   Figura 14: Estructuras de control.
+   Figura 16: Estructuras de control.
 
 Cada círculo, denominado nodo del grafo de flujo, representa una o más sentencias procedimentales. Un sólo nodo puede corresponder a una secuencia de cuadros de procesos y a un rombo de decisión. Las flechas del grafo de flujo, denominado aristas o enlaces, representan flujo de control y son análogos a las flechas del grafo de flujo. Una arista debe terminar en un nodo, incluso aunque el nodo no represente ninguna sentencia procedimental
 
 
-.. figure:: img/dsi15.png
+.. figure:: img/dsi17.png
    :scale: 50%
 
-   Figura 15: Ejemplo.
+   Figura 17: Ejemplo.
 
 
 **Complejidad ciclomática:** medida de la cantidad de bifurcaciones de un algoritmo. No tiene unidades, es una medida abstracta. Las áreas delimitadas por aristas y nodos se denominan regiones. Cuando contabilizamos las regiones incluimos el área exterior del grafo contando como otra región más. La complejidad ciclomática V(G) es una métrica del software que proporciona una medición cuantitativa de la complejidad lógica de un programa. El valor calculado como complejidad ciclomática define el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de caminos independientes del conjunto básico de un programa y nos da un límite superior para el número de pruebas que se deben realizar para asegurar que se ejecuta cada sentencia al menos una vez.
@@ -832,10 +1129,10 @@ Prueba de integración
 
 Es una técnica sistemática para construir la estructura del programa mientras que se llevan a cabo pruebas para detectar errores asociados con interacción. Junta módulos y los hace funcionar juntos. Tenemos dos estrategias: ascendente y descendente.
 
-.. figure:: img/dsi6.png
+.. figure:: img/dsi18.png
    :scale: 50%
 
-   Figura 16: Jerarquía de módulos.
+   Figura 18: Jerarquía de módulos.
 
 **Ascendente:** probar primero los módulos inferiores. Empieza la construcción y la prueba con los módulos atómicos (es decir, módulos de los niveles más bajos). Dado que los módulos se integran de abajo hacia arriaba, el proceso requerido de los módulos subordinado a un nivel dado siempre están disponibles y se elimina la necesidad de resguardo. Se puede implementar una estrategia de integración ascendente mediante los siguientes pasos:
 
