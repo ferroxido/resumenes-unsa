@@ -11,14 +11,11 @@ Ingeniería de Software
 
 **Definiciones:**
 
-La ingeniería del software es el establecimiento y uso de principios de ingeniería razonables con el objetivo de obtener software econónicamente, que
-sea de confianza y trabaje eficientemente en las máquinas reales.
+La ingeniería del software es el establecimiento y uso de principios de ingeniería razonables con el objetivo de obtener software econónicamente, que sea de confianza y trabaje eficientemente en las máquinas reales.
 
-Disciplina tecnológica concerniente a la produción y mantenimiento sistemático de productos software que son desarrollados y modificados en el tiempo
-y con los costes estimados. Ademas, la ingeniería del software tiene que ver con cuestiones de gestión que caen fuera del dominio de la programación tradicional.
+Disciplina tecnológica concerniente a la produción y mantenimiento sistemático de productos software que son desarrollados y modificados en el tiempo y con los costos estimados. Ademas, la ingeniería del software tiene que ver con cuestiones de gestión que caen fuera del dominio de la programación tradicional.
 
-Es una disciplina que comprende todos los aspectos de la produción del software desde las etapas iniciales de la especificación del sistema, hasta el mantenimiento
-de éste después de que se utiliza.
+Es una disciplina que comprende todos los aspectos de la produción del software desde las etapas iniciales de la especificación del sistema, hasta el mantenimiento de éste después de que se utiliza.
 
 **Características:**
 
@@ -30,10 +27,13 @@ de éste después de que se utiliza.
 * Soporte real a los usuarios.
 
 
+**Modelo de la ingeniería del software:**
+
+
+
 **Técnicas usadas en la ingeniería:**
 
-El modelado: simplificación del objeto en el mundo real, pero que es suficientemente realista como para dar una idea de lo que ocurrirá en la realidad
-y usarse como base del desarrollo.
+El modelado: simplificación del objeto en el mundo real, pero que es suficientemente realista como para dar una idea de lo que ocurrirá en la realidad y usarse como base del desarrollo.
 
 División del producto: se fracciona el producto de modo que cada fragmento lo puede realizar un miembro del grupo de desarrollo.
 
@@ -67,7 +67,7 @@ Problemas en el modelo:
 * Normalmente, las especificaciones son imcompletas o anómalas.
 * No existe una distición precisa entre la especificación, el diseño y la manufactura.
 * Solo hasta que el sistema se ha producido se puede probar.
-* El software no se puede remplazar siempre durante el mantenimiento.
+* El software no se puede reemplazar siempre durante el mantenimiento.
 
 **Modelos genéricos de desarrollo de software**
 
